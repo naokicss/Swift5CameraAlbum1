@@ -56,4 +56,12 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             print("エラー")
         }
     
+        
+        
 }
+
+    @IBAction func openAlbum(_ sender: Any) {
+    }
+    
+}
+
