@@ -50,6 +50,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
             let cameraPicer = UIImagePickerController()
             cameraPicer.sourceType = sourceType
             cameraPicer.delegate = self
+            cameraPicer.allowsEditing = true
             present(cameraPicer, animated: true, completion: nil)
         
         }else{
@@ -59,9 +60,37 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
         
         
 }
-
-    @IBAction func openAlbum(_ sender: Any) {
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        <#code#>
     }
     
+    
+
+    @IBAction func openAlbum(_ sender: Any) {
+        
+        let sourceType = UIImagePickerController.SourceType.photoLibrary
+        //カメラが利用可能かチェック
+        
+        if UIImagePickerController.isSourceTypeAvailable(.camera){
+            
+            //変数化
+            
+            let cameraPicer = UIImagePickerController()
+            cameraPicer.sourceType = sourceType
+            cameraPicer.delegate = self
+            cameraPicer.allowsEditing = true
+            present(cameraPicer, animated: true, completion: nil)
+        
+        }else{
+            print("エラー")
+        }
+        
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        <#code#>
+    }
 }
 
