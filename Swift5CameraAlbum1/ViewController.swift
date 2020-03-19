@@ -63,7 +63,7 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
         picker.dismiss(animated: true, completion: nil)
-        <#code#>
+        
     }
     
     
