@@ -101,5 +101,21 @@ class ViewController: UIViewController,UIImagePickerControllerDelegate,UINavigat
     }
         
 }
+    
+    //シェアするための機能
+    
+    
+    @IBAction func share(_ sender: Any) {
+    
+    
+        let text = "#tamariba"
+        let image = backImageView.image?.jpegData(compressionQuality: 0.2)
+        let items = [text,image] as [Any]
+       
+        let activityVC = UIActivityViewController(activityItems: items, applicationActivities: nil)
+        present(activityVC, animated: true, completion: nil)
+    }
+    
+   
 }
 
